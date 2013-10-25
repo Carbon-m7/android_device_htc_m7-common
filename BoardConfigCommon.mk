@@ -47,7 +47,6 @@ TARGET_KERNEL_SOURCE := kernel/htc/m7
 
 # Audio
 BOARD_USES_FLUENCE_INCALL := true  # use DMIC in call only
-BOARD_USES_LEGACY_ALSA_AUDIO:= false # prevent it using the old alsa
 BOARD_USES_SEPERATED_AUDIO_INPUT := true  # use distinct voice recognition use case
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true  # use distinct voice speaker use case
 BOARD_USES_SEPERATED_VOIP := true  # use distinct VOIP use cases
@@ -55,10 +54,6 @@ BOARD_AUDIO_AMPLIFIER := device/htc/m7-common/libaudioamp
 BOARD_HAVE_NEW_QCOM_CSDCLIENT := true # use new qcom csd-client
 TARGET_USES_QCOM_MM_AUDIO := true
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-
-# FM Radio
-HAVE_FM_RADIO := true
-COMMON_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_BCM := true

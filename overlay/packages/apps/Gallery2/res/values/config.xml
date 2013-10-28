@@ -17,19 +17,17 @@
 <!-- Camera app resources that may need to be customized
      for different hardware or product builds. -->
 <resources>
-    <!-- HTC Camcorder Mode -->
-    <bool name="needsHTCCamMode">true</bool>
     <!-- The camera removes the focus modes by default when touch-to-focus
          exists. Use this option to change that behavior -->
     <bool name="wantsFocusModes">true</bool>
-    <!-- Use ZSL mode for Qualcomm cameras -->
-    <bool name="enableZSL">false</bool>
     <!-- Disable face detection on the front camera -->
     <bool name="noFaceDetectOnFrontCamera">true</bool>
-    <!-- Force use of profile video size -->
-    <bool name="useProfileVideoSize">true</bool>
-    <!-- A certain beefy device has issues with video snapshots -->
-    <bool name="useVideoSnapshotWorkaround">true</bool>
+    <!-- Disable face detection on the rear camera -->
+    <bool name="noFaceDetectOnRearCamera">true</bool>
+    <!-- Use ZSL mode for Qualcomm cameras -->
+    <bool name="enableZSL">true</bool>
+    <!-- HTC Camcorder Mode -->
+    <bool name="needsHTCCamMode">true</bool>
     <!-- Video HDR mode. Aggressively crashes on some hardware -->
     <bool name="enableVideoHDR">true</bool>
 </resources>

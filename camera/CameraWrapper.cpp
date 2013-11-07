@@ -63,7 +63,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
     },
     .get_number_of_cameras = camera_get_number_of_cameras,
     .get_camera_info = camera_get_camera_info,
-    .set_callbacks: NULL,
+    .set_callbacks = NULL,
 };
 
 typedef struct wrapper_camera_device {

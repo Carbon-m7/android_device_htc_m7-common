@@ -163,7 +163,7 @@ PRODUCT_COPY_FILES += \
     device/htc/m7-common/scripts/device_prop.sh:system/bin/device_prop.sh
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb
+    persist.sys.usb.config=mtp
 
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \

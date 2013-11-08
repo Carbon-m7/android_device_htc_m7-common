@@ -158,10 +158,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
-# PRODUCT_DEVICE override fix for m7 camera libs
-PRODUCT_COPY_FILES += \
-    device/htc/m7-common/scripts/device_prop.sh:system/bin/device_prop.sh
-
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 

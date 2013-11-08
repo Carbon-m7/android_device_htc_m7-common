@@ -27,7 +27,6 @@ f# Copyright (c) 2011, Code Aurora Forum. All rights reserved.
 #
 
 import init.qcom.usb.rc
-import init.target.rc
 
 on init
     export BOOTCLASSPATH ${BOOTCLASSPATH}:/system/framework/htcirlibs.jar
@@ -35,7 +34,6 @@ on init
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
     mkdir /storage/usbdisk 0775 system system
-    mkdir /cache 0771 system system
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated

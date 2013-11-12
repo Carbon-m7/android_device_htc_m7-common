@@ -189,6 +189,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.gralloc.cp.level3=1 \
     persist.timed.enable=true \
     ro.baseband.arch=mdm \
+    ro.cam.hw.version=m7 \
     ro.opengles.version=196608 \
     ro.qualcomm.cabl=0 \
     ro.telephony.call_ring.multiple=false \

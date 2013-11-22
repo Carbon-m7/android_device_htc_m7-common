@@ -194,7 +194,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.tuning_spec=htc \
     persist.gps.qmienabled=true \
     persist.gps.qc_nlp_in_use=0 \
-    persist.gralloc.cp.level3=1 \
     persist.timed.enable=true \
     ro.baseband.arch=mdm \
     ro.cam.hw.version=m7 \

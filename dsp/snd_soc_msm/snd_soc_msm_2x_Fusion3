@@ -578,6 +578,8 @@ SectionVerb
 	EndSequence
 EndSection
 
+}
+
 SectionVerb
 	Name "Voice CallVoice Speaker"
 
@@ -598,11 +600,11 @@ SectionVerb
 		'SLIMBUS_3_RX_Voice Mixer Voice Stub':1:0
 		'SLIMBUS_3_RX Port Mixer MI2S_TX':1:0
 	EndSequence
+
 	CapturePCM  9
 	PlaybackPCM  9
 EndSection
 
-}
 SectionUseCase."Voice Call IP" {
 SectionVerb
 	Name "Voice Call IP"
@@ -1579,17 +1581,15 @@ SectionDevice
 
 	EnableSequence
 		'SLIM_0_TX Channels':0:One
-		'SLIM TX7 MUX':0:DEC5
-		'DEC5 MUX':0:ADC2
-		'DEC5 Volume':2:54
+		'SLIM TX1 MUX':0:DEC1
+		'DEC1 MUX':0:ADC2
 		'ADC2 Volume':1:100
 		'MICBIAS2 CAPLESS Switch':1:1
 	EndSequence
 
 	DisableSequence
-		'SLIM TX7 MUX':0:ZERO
-		'DEC5 MUX':0:ZERO
-		'DEC5 Volume':2:0
+		'SLIM TX1 MUX':0:ZERO
+		'DEC1 MUX':0:ZERO
 		'ADC2 Volume':1:0
 		'MICBIAS2 CAPLESS Switch':1:0
 	EndSequence
@@ -1618,7 +1618,7 @@ SectionDevice
 		'IIR1 Enable Band3':1:1
 		'IIR1 Enable Band4':1:1
 		'IIR1 Enable Band5':1:1
-		'IIR1 INP1 Volume':2:3B
+		'IIR1 INP1 Volume':2:35
 		'IIR1 INP1 MUX':0:DEC5
 		'MICBIAS2 CAPLESS Switch':1:1
 	EndSequence
@@ -1948,7 +1948,7 @@ SectionDevice
 		'DEC8 Volume':2:57
 		'SLIM TX8 MUX':0:DEC9
 		'DEC9 MUX':0:DMIC4
-		'DEC9 Volume':2:57
+		'DEC9 Volume':2:62
 		'MICBIAS1 CAPLESS Switch':1:0
 		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
@@ -2001,12 +2001,15 @@ SectionDevice
 		'DEC8 Volume':2:57
 		'SLIM TX8 MUX':0:DEC9
 		'DEC9 MUX':0:DMIC4
-		'DEC9 Volume':2:64
+		'DEC9 Volume':2:62
+		'MICBIAS1 CAPLESS Switch':1:0
 		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
 
 	DisableSequence
 		'SLIM TX7 MUX':0:ZERO
+		'SLIM TX8 MUX':0:ZERO
+		'DEC8 MUX':0:ZERO
 		'DEC9 MUX':0:ZERO
 		'DEC8 Volume':2:0
 		'DEC9 Volume':2:0
@@ -2039,12 +2042,15 @@ SectionDevice
 		'DEC8 Volume':2:57
 		'SLIM TX8 MUX':0:DEC9
 		'DEC9 MUX':0:DMIC4
-		'DEC9 Volume':2:64
+		'DEC9 Volume':2:62
+		'MICBIAS1 CAPLESS Switch':1:0
 		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
 
 	DisableSequence
 		'SLIM TX7 MUX':0:ZERO
+		'SLIM TX8 MUX':0:ZERO
+		'DEC8 MUX':0:ZERO
 		'DEC9 MUX':0:ZERO
 		'DEC8 Volume':2:0
 		'DEC9 Volume':2:0
@@ -2813,6 +2819,7 @@ SectionModifier
 
 	DisableSequence
 	EndSequence
+
 	CapturePCM  9
 	PlaybackPCM  9
 EndSection
@@ -2837,6 +2844,7 @@ SectionModifier
 		'SLIMBUS_3_RX_Voice Mixer Voice Stub':1:0
 		'SLIMBUS_3_RX Port Mixer MI2S_TX':1:0
 	EndSequence
+
 	CapturePCM  9
 	PlaybackPCM  9
 EndSection

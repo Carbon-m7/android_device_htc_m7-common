@@ -47,10 +47,13 @@ TARGET_KERNEL_SOURCE := kernel/htc/m7
 
 # Audio
 BOARD_HAVE_HTC_CSDCLIENT := true # use new qcom csd-client
+BOARD_HAVE_LOW_LATENCY_AUDIO := true # use low latency audio
 BOARD_USES_FLUENCE_INCALL := true  # use DMIC in call only
 BOARD_USES_SEPERATED_AUDIO_INPUT := true  # use distinct voice recognition use case
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true  # use distinct voice speaker use case
 BOARD_USES_SEPERATED_VOIP := true  # use distinct VOIP use cases
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_USES_QCOM_MM_AUDIO := true
 BOARD_AUDIO_AMPLIFIER := device/htc/m7-common/libaudioamp
 
 # Bluetooth
@@ -65,6 +68,7 @@ BOARD_NEEDS_MEMORYHEAPPMEM := true
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
 COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # QCOM Renderscript

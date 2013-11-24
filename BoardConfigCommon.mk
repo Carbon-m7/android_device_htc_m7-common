@@ -103,14 +103,42 @@ WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/firmware/fw_bcm43
 WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/system/etc/firmware/fw_bcm4335_apsta_b0.bin nvram_path=/system/etc/calibration"
 WIFI_BAND                        := 802_11_ABG
 
-# SELinux
-BOARD_SEPOLICY_DIRS := \
-    device/htc/m7-common/sepolicy
+# SElinux
+BOARD_SEPOLICY_DIRS += \
+    device/htc/m7/sepolicy
 
-BOARD_SEPOLICY_UNION := \
-    app.te \
+BOARD_SEPOLICY_UNION += \
+    file_contexts \
+    property_contexts \
+    te_macros \
+    bluetooth_loader.te \
+    bridge.te \
+    camera.te \
+    conn_init.te \
     device.te \
-    file_contexts
+    app.te \
+    dhcp.te \
+    domain.te \
+    drmserver.te \
+    file.te \
+    kickstart.te \
+    init.te \
+    mediaserver.te \
+    mpdecision.te \
+    netmgrd.te \
+    property.te \
+    qmux.te \
+    restorecon.te \
+    rild.te \
+    rmt.te \
+    sensors.te \
+    surfaceflinger.te \
+    system.te \
+    tee.te \
+    thermald.te \
+    ueventd.te \
+    wpa_supplicant.te \
+    zygote.te
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216

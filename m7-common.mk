@@ -213,6 +213,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # QRNGD
 PRODUCT_PACKAGES += qrngd
 
+PRODUCT_TAGS += dalvik.gc.type-precise
+
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 

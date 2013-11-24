@@ -52,8 +52,6 @@ BOARD_USES_FLUENCE_INCALL := true  # use DMIC in call only
 BOARD_USES_SEPERATED_AUDIO_INPUT := true  # use distinct voice recognition use case
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true  # use distinct voice speaker use case
 BOARD_USES_SEPERATED_VOIP := true  # use distinct VOIP use cases
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_QCOM_MM_AUDIO := true
 BOARD_AUDIO_AMPLIFIER := device/htc/m7-common/libaudioamp
 
 # Bluetooth

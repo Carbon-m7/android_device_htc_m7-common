@@ -109,8 +109,8 @@ PRODUCT_PACKAGES += \
     libaudioamp
 
 # Camera
-#PRODUCT_PACKAGES += \
-#    camera.msm8960
+PRODUCT_PACKAGES += \
+    camera.msm8960
 
 # GPS
 PRODUCT_PACKAGES += \

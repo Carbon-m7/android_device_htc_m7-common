@@ -289,6 +289,16 @@ on post-fs-data
     chmod 2770 /dev/socket/qmux_bluetooth
 #-SSD_RIL: from Qualcomm socket path
 
+    # HTC add: double check the perms of /data/data for already existed case
+    chown system system /data/data
+    chmod 0771 /data/data
+
+    # Mpdecision state
+    mkdir /data/mpdecision 0660 system system
+
+    # If there is no fs-post-data action in the init.<device>.rc file, you
+    # must uncomment this line, otherwise encrypted filesystems
+    # won't work.
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 

@@ -109,8 +109,8 @@ PRODUCT_PACKAGES += \
     libaudioamp
 
 # Camera
-PRODUCT_PACKAGES += \
-    camera.msm8960
+#PRODUCT_PACKAGES += \
+#    camera.msm8960
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -197,7 +197,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qc_nlp_in_use=0 \
     persist.timed.enable=true \
     ro.baseband.arch=mdm \
-    ro.cam.hw.version=m7 \
     ro.opengles.version=196608 \
     ro.qualcomm.cabl=0 \
     ro.telephony.call_ring.multiple=false \

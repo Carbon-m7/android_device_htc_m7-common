@@ -64,7 +64,6 @@ BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
-COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -108,6 +107,7 @@ BOARD_SEPOLICY_DIRS += \
     device/htc/m7/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    adbd.te \
     file_contexts \
     property_contexts \
     te_macros \
@@ -137,6 +137,7 @@ BOARD_SEPOLICY_UNION += \
     tee.te \
     thermald.te \
     ueventd.te \
+    vold.te \
     wpa_supplicant.te \
     zygote.te
 

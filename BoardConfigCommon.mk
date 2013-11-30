@@ -40,7 +40,7 @@ TARGET_CPU_VARIANT := krait
 # Kernel
 BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=0 androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 TARGET_KERNEL_CONFIG := cr_m7_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/m7
@@ -71,7 +71,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Graphics
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
-USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 HAVE_ADRENO_SOURCE := false
 

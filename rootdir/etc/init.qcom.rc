@@ -1,34 +1,4 @@
-<<<<<<< HEAD
-f# Copyright (c) 2011, Code Aurora Forum. All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are
-# met:
-#     * Redistributions of source code must retain the above copyright
-#       notice, this list of conditions and the following disclaimer.
-#     * Redistributions in binary form must reproduce the above
-#       copyright notice, this list of conditions and the following
-#       disclaimer in the documentation and/or other materials provided
-#       with the distribution.
-#     * Neither the name of Code Aurora Forum, Inc. nor the names of its
-#       contributors may be used to endorse or promote products derived
-#       from this software without specific prior written permission.
-#
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
-# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
-# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
-# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
 
-=======
->>>>>>> d2ce4b7... m7-common: clean up init script
 import init.qcom.usb.rc
 
 on init
@@ -301,19 +271,8 @@ on boot
     chmod 0644 /proc/cmdline
 
     # Bluetooth
-<<<<<<< HEAD
-    chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /proc/bluetooth/sleep/proto
-    chown system system /sys/module/sco/parameters/disable_esco
-    chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
-    chmod 0660 /sys/module/bluetooth_power/parameters/power
-    chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
-=======
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
->>>>>>> d2ce4b7... m7-common: clean up init script
     chmod 0660 /sys/class/rfkill/rfkill0/state
 
     # GPS
@@ -385,12 +344,7 @@ on boot
 
     chown system system /sys/android_touch/unlock
 
-<<<<<<< HEAD
-# Set volume key wake up attribute file permission
-    chown system system /sys/keyboard/vol_wakeup
-=======
     chown media media /sys/keyboard/vol_wakeup
->>>>>>> d2ce4b7... m7-common: clean up init script
 
     chown media media /sys/devices/platform/msm_sdcc.1/burst
     chown media media /proc/emmc_burst
@@ -411,22 +365,7 @@ service akmd /system/bin/akmd
     user system
     group system misc input
 
-<<<<<<< HEAD
-service dhcpcd_brcm-pan /system/bin/dhcpcd -ABKL
-    disabled
-    oneshot
-
-# Camera server
-service qcamerasvr /system/bin/mm-qcamera-daemon
-    class late_start
-    user camera
-    group camera system inet graphics
-
-# HTC CIR firmware update - BEGIN
-service cir_fw_update /system/bin/cir_fw_update -u /system/etc/cir.img
-=======
 service cir_fw_update /system/bin/cir_fw_update -u cir.img
->>>>>>> d2ce4b7... m7-common: clean up init script
     class main
     user root
     group root
@@ -464,21 +403,6 @@ service qmuxd /system/bin/qmuxd
     user radio
     group radio audio gps
 
-<<<<<<< HEAD
-service netmgrd /system/bin/netmgrd
-    class core
-
-# virtual sdcard daemon running as media_rw (1023)
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
-
-service qrngd /system/bin/qrngd -f
-    class main
-    user root
-    group root
-
-=======
->>>>>>> d2ce4b7... m7-common: clean up init script
 service thermald /system/bin/thermald
     class main
     user root

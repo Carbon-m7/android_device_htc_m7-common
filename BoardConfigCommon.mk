@@ -161,9 +161,5 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Charge mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
-# Compiler Flags
-TARGET_GLOBAL_CFLAGS += -pipe -funsafe-math-optimizations -fno-short-enums -mfloat-abi=softfp -mfpu=neon
-TARGET_GLOBAL_CPPFLAGS += -pipe -funsafe-math-optimizations -fno-short-enums -mfloat-abi=softfp -mfpu=neon
-
 # inherit from the proprietary version
 -include vendor/htc/m7-common/BoardConfigVendor.mk

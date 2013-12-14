@@ -1,2 +1,0 @@
-# libgsl is chatty about accessing /data/local/tmp
-dontaudit { surfaceflinger appdomain } shell_data_file:dir search;

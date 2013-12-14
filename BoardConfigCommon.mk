@@ -100,44 +100,14 @@ WIFI_DRIVER_FW_PATH_STA          := "/system/etc/firmware/fw_bcm4335_b0.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/system/etc/firmware/fw_bcm4335_apsta_b0.bin"
 WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/firmware/fw_bcm4335_p2p_b0.bin"
 
-# SElinux
-BOARD_SEPOLICY_DIRS += \
+# SELinux
+BOARD_SEPOLICY_DIRS := \
     device/htc/m7/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    adbd.te \
-    file_contexts \
-    property_contexts \
-    te_macros \
-    bluetooth_loader.te \
-    bridge.te \
-    camera.te \
-    conn_init.te \
-    device.te \
+BOARD_SEPOLICY_UNION := \
     app.te \
-    dhcp.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    kickstart.te \
-    init.te \
-    mediaserver.te \
-    mpdecision.te \
-    netmgrd.te \
-    property.te \
-    qmux.te \
-    restorecon.te \
-    rild.te \
-    rmt.te \
-    sensors.te \
-    surfaceflinger.te \
-    system.te \
-    tee.te \
-    thermald.te \
-    ueventd.te \
-    vold.te \
-    wpa_supplicant.te \
-    zygote.te
+    device.te \
+    file_contexts
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216

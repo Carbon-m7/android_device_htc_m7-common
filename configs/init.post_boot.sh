@@ -50,6 +50,10 @@ case "$target" in
         echo 1 > /sys/devices/system/cpu/cpu1/online
         echo 1 > /sys/devices/system/cpu/cpu2/online
         echo 1 > /sys/devices/system/cpu/cpu3/online
+        echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+        echo "ondemand" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+        echo "ondemand" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+        echo "ondemand" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
         echo 50000 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
         echo 90 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
         echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
@@ -64,16 +68,16 @@ case "$target" in
         chown system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
         chown system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
         chown system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
-        echo "smartmax" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-        echo "smartmax" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-        echo "smartmax" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-        echo "smartmax" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+        echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+        echo "ondemand" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+        echo "ondemand" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+        echo "ondemand" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
         echo 1 > /dev/cpuctl/apps/cpu.notify_on_migrate
-        #echo 1 > /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
-        # echo 384000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-        # echo 384000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
-        # echo 384000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
-        # echo 384000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
+        echo 384000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+        echo 384000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+        echo 384000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+        echo 384000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
+        # echo 1 > /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
         # chown system /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
         # chown system /sys/devices/system/cpu/cpufreq/interactive/boost
         # chown system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
@@ -85,8 +89,8 @@ case "$target" in
         # chown system /sys/devices/system/cpu/cpufreq/interactive/target_loads
         # chown system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
         # chown system /sys/devices/system/cpu/cpufreq/interactive/timer_slack
-        # chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-        # chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+        chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+        chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
         chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
         chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
         chown system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
@@ -109,17 +113,17 @@ case "$target" in
         chown system /sys/power/launch_event
         chown system /sys/power/powersave
         chown system /sys/power/cpufreq_ceiling
-	chown system /sys/power/cpunum_floor
-	chown system /sys/power/cpunum_ceiling
-	echo 1 > /sys/module/rmnet_usb/parameters/rmnet_data_init
-	# Allow QMUX daemon to assign port open wait time
-	chown radio.radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
+        chown system /sys/power/cpunum_floor
+        chown system /sys/power/cpunum_ceiling
+        echo 1 > /sys/module/rmnet_usb/parameters/rmnet_data_init
+        # Allow QMUX daemon to assign port open wait time
+        chown radio.radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
     ;;
 esac
 
 # Post-setup services
 case "$target" in
     "msm8960")
-	start adaptive
+        start adaptive
     ;;
 esac

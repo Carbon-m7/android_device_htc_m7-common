@@ -383,10 +383,9 @@ service netmgrd /system/bin/netmgrd
     class core
 # End FUSE
 
-# NOT IN USED ATM
-# service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
-#    class main
-#    user root
+service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
+    class main
+    user root
 
 service post-boot /system/bin/sh /system/etc/init.post_boot.sh
     user root

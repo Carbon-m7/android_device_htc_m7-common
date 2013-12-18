@@ -183,6 +183,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dexopt-data-only=1 \
     debug.nfc.fw_download=true \
     debug.nfc.fw_boot_download=false \
     debug.nfc.se=true \
